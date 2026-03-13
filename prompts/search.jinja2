@@ -7,7 +7,7 @@
 1. **web_search(query: str,sites: Optional[List[str]] = None,recency: Optional[str] = None,)**  
    - 执行实时在线搜索，返回最新公开信息摘要。
 
-2. **read_webpage(url: str)**  (该函数还未实现，请勿调用)
+2. **read_webpage(url: str)**  (该函数未实现，请勿调用)
    - 用于读取指定网页的详细内容。
 
 3. **task_done()**  
@@ -46,7 +46,7 @@
 
 ```json
 {
-  "function": "search | analysis | task_done",
+  "function": "web_search | read_webpage | task_done",
   "parameters": {
     /* 工具参数 */
   }
