@@ -1,0 +1,60 @@
+
+Planner Round 0
+当前计划： 搜索小米SU7和YU7的基本信息
+Assigner: 拆解计划并分配 Agent
+[Task(id='efe2a93e-e189-4df7-b8a6-67df95b2ca89', content='搜索小米SU7的基本信息，包括车型、配置、价格、发布时间等', agent='search', status='todo', result=None), Task(id='b0d52a3e-2a9f-44a8-a4d4-0d7cd722ae8e', content='搜索YU7的基本信息，包括车型、配置、价格、发布时间等', agent='search', status='todo', result=None)]
+
+Executor: 使用 [search] 执行任务：搜索小米SU7的基本信息，包括车型、配置、价格、发布时间等
+SearchAgent: 搜索小米SU7的基本信息，包括车型、配置、价格、发布时间等
+Executor: 任务完成 -> 搜索小米SU7的基本信息，包括车型、配置、价格、发布时间等
+
+Executor: 使用 [search] 执行任务：搜索YU7的基本信息，包括车型、配置、价格、发布时间等
+SearchAgent: 搜索YU7的基本信息，包括车型、配置、价格、发布时间等
+Executor: 任务完成 -> 搜索YU7的基本信息，包括车型、配置、价格、发布时间等
+
+Planner Round 1
+当前计划： 搜索小米SU7和YU7的详细配置对比
+Assigner: 拆解计划并分配 Agent
+[Task(id='60947855-2030-44d1-a511-6d2d2313829c', content='搜索小米SU7和YU7的详细配置参数、性能数据、价格等信息', agent='search', status='todo', result=None), Task(id='345807ac-58ca-4f00-bb3c-27423a336311', content='整理对比数据并生成配置对比分析报告', agent='report', status='todo', result=None)]
+
+Executor: 使用 [search] 执行任务：搜索小米SU7和YU7的详细配置参数、性能数据、价格等信息
+SearchAgent: 搜索小米SU7和YU7的详细配置参数、性能数据、价格等信息
+Executor: Agent [search] 执行失败: SearchAgent 执行失败: Recursion limit of 7 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.
+For troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT
+Traceback (most recent call last):
+  File "/data/lyl/DeepResearch/app/agents/search.py", line 58, in run
+    response = self.agent.invoke(
+  File "/data/conda/envs/DRagent/lib/python3.10/site-packages/langgraph/pregel/main.py", line 3071, in invoke
+    for chunk in self.stream(
+  File "/data/conda/envs/DRagent/lib/python3.10/site-packages/langgraph/pregel/main.py", line 2674, in stream
+    raise GraphRecursionError(msg)
+langgraph.errors.GraphRecursionError: Recursion limit of 7 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.
+For troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/lyl/DeepResearch/app/main.py", line 27, in <module>
+    main()
+  File "/data/lyl/DeepResearch/app/main.py", line 20, in main
+    result = graph.invoke(init_state)
+  File "/data/conda/envs/DRagent/lib/python3.10/site-packages/langgraph/pregel/main.py", line 3071, in invoke
+    for chunk in self.stream(
+  File "/data/conda/envs/DRagent/lib/python3.10/site-packages/langgraph/pregel/main.py", line 2646, in stream
+    for _ in runner.tick(
+  File "/data/conda/envs/DRagent/lib/python3.10/site-packages/langgraph/pregel/_runner.py", line 167, in tick
+    run_with_retry(
+  File "/data/conda/envs/DRagent/lib/python3.10/site-packages/langgraph/pregel/_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+  File "/data/conda/envs/DRagent/lib/python3.10/site-packages/langgraph/_internal/_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "/data/conda/envs/DRagent/lib/python3.10/site-packages/langgraph/_internal/_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "/data/lyl/DeepResearch/app/core/executor.py", line 50, in run
+    raise e
+  File "/data/lyl/DeepResearch/app/core/executor.py", line 34, in run
+    result = agent.run(task, state)
+  File "/data/lyl/DeepResearch/app/agents/search.py", line 70, in run
+    raise RuntimeError(f"SearchAgent 执行失败: {e}")
+RuntimeError: SearchAgent 执行失败: Recursion limit of 7 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.
+For troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT

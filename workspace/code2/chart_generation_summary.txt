@@ -1,0 +1,27 @@
+国家自然科学基金数据可视化报告
+==================================================
+生成时间: 2026-02-06 07:49:23
+
+生成的图表文件:
+1. workspace/code/chart1_2020_funding_comparison.png
+   描述: 2020年各类项目资助金额和数量对比图
+
+2. workspace/code/chart2_2020_application_funding_comparison.png
+   描述: 2020年申请与资助情况对比图
+
+3. workspace/code/chart3_regional_funding_ranking.png
+   描述: 2017-2021年地区立项数量排名图
+
+4. workspace/code/chart4_comprehensive_analysis.png
+   描述: 2020年资助情况综合分析图
+
+5. workspace/code/chart5_regional_distribution.png
+   描述: 地区立项分布图
+
+关键数据指标:
+- 2020年总资助金额: 280,708 万元
+- 2020年总项目数量: 6,829 项
+- 平均每项资助金额: 41.11 万元/项
+- 面上项目资助率: 15.95%
+- 青年基金资助率: 16.66%
+- 北京地区立项数最高: 34,680 项
